@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="clicking-method"></p>
+    <input id="name-field" type="text">
+    <button id="update-name">update</button>
+    <button onclick="justHandleFunction()">Just function</button>
+    <button id="handle-event">Direct and event listener</button>
+    <script>
+        // USING-FUNCTION 
+        function justHandleFunction() {
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'set by using function';
+        }
+
+        // DIRECT
+        document.getElementById('handle-event').addEventListener('click', function () {
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'set by direct add event listener';
+        })
+
+        // DIRECT
+        document.getElementById('update-name').addEventListener('click', function () {
+            const nameField = document.getElementById('name-field');
+
+            // JUST DEKHAR JONNO INPUT NEWA PORJONTO THIK ASE KINA/ INNER TEXT ER VALUE PAITE GELE DOT VALUE DEWA LAGBE AND TEXT PAITE GELE DOT INNER TEXT DEWA LAGBE.
+            // console.log(nameField.value);
+            const p = document.getElementById('clicking-method');
+            p.innerText = nameField.value;
+            nameField.value = '';
+        })
+
+
+
+    </script>
+</body>
+
+</html>
